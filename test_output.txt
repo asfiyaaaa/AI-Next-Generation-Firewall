@@ -1,0 +1,144 @@
+﻿
+############################################################
+#  TCP STREAM REASSEMBLY - TEST SUITE
+############################################################
+
+============================================================
+TEST 1: In-Order Packet Reassembly
+============================================================
+
+  Packets processed: 3
+  Bytes reassembled: 0
+  Chunks sent to Phase 3: 0
+
+  ERROR: 'charmap' codec can't encode character '\u2717' in position 17: character maps to <undefined>
+
+============================================================
+TEST 2: Out-of-Order Packet Reassembly
+============================================================
+
+  Sending packets out of order: AAA, CCC, BBB
+
+  Packets processed: 4
+  Active streams: 1
+  Bytes reassembled: 0
+
+  ERROR: 'charmap' codec can't encode character '\u2713' in position 17: character maps to <undefined>
+
+============================================================
+TEST 3: Segment Buffer (Gaps & Overlaps)
+============================================================
+
+  Inserting: seg1(100-105), seg3(110-115) [gap at 105-110]
+  Gaps detected: 1
+    Gap: 105 - 110 (5 bytes)
+  Contiguous data before gap fill: 'AAAAA' (5 bytes)
+
+  Filling gap with seg2(105-110)
+  Contiguous data after gap fill: 'BBBBBCCCCC' (10 bytes)
+
+  ERROR: 'charmap' codec can't encode character '\u2713' in position 17: character maps to <undefined>
+
+============================================================
+TEST 4: Retransmission Handling
+============================================================
+  Inserted: ORIGINAL at seq 100
+  Inserted: ORIGINAL again (retransmit)
+
+  Segments received: 2
+  Retransmissions detected: 0
+  Data retrieved: 'ORIGINAL'
+
+  ERROR: 'charmap' codec can't encode character '\u2717' in position 17: character maps to <undefined>
+
+============================================================
+TEST 5: TCP State Machine
+============================================================
+
+  Initial state: NONE
+  After SYN: SYN_SENT
+  After SYN-ACK: SYN_RECV
+  After ACK: ESTABLISHED
+  After FIN: FIN_WAIT1
+
+  ERROR: 'charmap' codec can't encode character '\u2713' in position 17: character maps to <undefined>
+
+============================================================
+TEST 6: Memory Limits
+============================================================
+  Buffer config: max_depth=100 bytes, max_segments=5
+  Segment 1 (50 bytes): accepted
+  Segment 2 (50 bytes): accepted
+  Segment 3 (50 bytes): dropped
+  Segment 4 (50 bytes): dropped
+  Segment 5 (50 bytes): dropped
+  Segment 6 (50 bytes): dropped
+  Segment 7 (50 bytes): dropped
+  Segment 8 (50 bytes): dropped
+  Segment 9 (50 bytes): dropped
+  Segment 10 (50 bytes): dropped
+
+  Final buffer size: 100 bytes
+  Final segment count: 2
+  Drops (depth): 8
+  Drops (segments): 0
+
+  ERROR: 'charmap' codec can't encode character '\u2713' in position 17: character maps to <undefined>
+
+============================================================
+TEST 7: Full HTTP Simulation
+============================================================
+
+  Simulating HTTP request: 47 bytes in 3 packets
+
+  Packets processed: 4
+  Bytes reassembled: 0
+  Chunks to Phase 3: 0
+
+  ERROR: 'charmap' codec can't encode character '\u2717' in position 17: character maps to <undefined>
+
+============================================================
+TEST SUMMARY
+============================================================
+python : Traceback (most 
+recent call last):
+At line:1 char:1
++ python test.py 2>&1 | 
+Out-File -Encoding utf8 
+test_output.txt; Get-Co ...
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (Trace  
+  back (most recent call    
+ last)::String) [], Remo    
+teException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+  File "C:\Users\Asfiy\Downl
+oads\Integration1\test.py", 
+line 365, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\Asfiy\Downl
+oads\Integration1\test.py", 
+line 356, in main
+    print(f"  {name}: 
+{status}")
+    
+~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asfiy\AppDa
+ta\Local\Programs\Python\Pyt
+hon313\Lib\encodings\cp1252.
+py", line 19, in encode
+    return codecs.charmap_en
+code(input,self.errors,encod
+ing_table)[0]
+           ~~~~~~~~~~~~~~~~~
+~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character '\u2717' 
+in position 28: character 
+maps to <undefined>

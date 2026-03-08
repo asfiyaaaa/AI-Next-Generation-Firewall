@@ -1,0 +1,25 @@
+{
+    "phase3_integration": {
+        "enabled": true,
+        "mode": "http",
+        "api_base_url": "http://127.0.0.1:8000",
+        "timeout_seconds": 5,
+        "async_processing": true,
+        "batch_size": 10,
+        "batch_timeout_ms": 100,
+        "max_workers": 4,
+        "queue_size": 10000,
+        "analyzers": {
+            "malware": true,
+            "url_filter": true,
+            "content_filter": true,
+            "dns_security": true,
+            "antibot": true,
+            "sandboxing": false
+        },
+        "logging": {
+            "log_all_streams": false,
+            "log_detections_only": true
+        }
+    }
+}

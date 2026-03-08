@@ -1,0 +1,98 @@
+{
+  "default_action": "drop",
+  "rules": [
+    {
+      "id": 1,
+      "name": "Allow Established",
+      "action": "allow",
+      "priority": 1,
+      "states": [
+        "established",
+        "related"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Allow Loopback",
+      "action": "allow",
+      "priority": 2,
+      "src_ip": "127.0.0.0/8",
+      "dst_ip": "127.0.0.0/8"
+    },
+    {
+      "id": 10,
+      "name": "Allow ICMP",
+      "action": "allow",
+      "priority": 10,
+      "protocol": "icmp"
+    },
+    {
+      "id": 11,
+      "name": "Allow DNS",
+      "action": "allow",
+      "priority": 11,
+      "protocol": "udp",
+      "dst_ports": [
+        53
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Allow HTTP/HTTPS",
+      "action": "allow",
+      "priority": 20,
+      "protocol": "tcp",
+      "dst_ports": [
+        80,
+        443
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Block Telnet",
+      "action": "drop",
+      "priority": 100,
+      "protocol": "tcp",
+      "dst_ports": [
+        23
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Block FTP",
+      "action": "drop",
+      "priority": 101,
+      "protocol": "tcp",
+      "dst_ports": [
+        21
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Block SMB",
+      "action": "drop",
+      "priority": 102,
+      "protocol": "tcp",
+      "dst_ports": [
+        445
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Block RDP",
+      "action": "drop",
+      "priority": 103,
+      "protocol": "tcp",
+      "dst_ports": [
+        3389
+      ]
+    },
+    {
+      "id": 9999,
+      "name": "Log Drop",
+      "action": "drop",
+      "priority": 9999,
+      "log": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #010409;
+  --bg-card: #161b22;
+  --bg-card-hover: #21262d;
+  
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+  
+  --accent-blue: #58a6ff;
+  --accent-blue-dim: rgba(88, 166, 255, 0.1);
+  --accent-green: #3fb950;
+  --accent-green-dim: rgba(63, 185, 80, 0.1);
+  --accent-red: #f85149;
+  --accent-red-dim: rgba(248, 81, 73, 0.1);
+  --accent-yellow: #d29922;
+  --accent-yellow-dim: rgba(210, 153, 34, 0.1);
+  --accent-purple: #bc8cff;
+  
+  --border-primary: #30363d;
+  --border-secondary: #21262d;
+  
+  --sidebar-width: 260px;
+  --header-height: 64px;
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  
+  --glass-bg: rgba(22, 27, 34, 0.8);
+  --glass-border: rgba(240, 246, 252, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-normal);
+}
+
+/* Common Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--text-muted);
+}

@@ -1,0 +1,310 @@
+{
+    "description": "Extended Application Signatures for NGFW",
+    "version": "1.0",
+    "applications": {
+        "chrome": {
+            "name": "Google Chrome",
+            "category": "web-browser",
+            "patterns": [
+                "Chrome/[\\d.]+",
+                "Chromium/[\\d.]+"
+            ],
+            "tls_sni_patterns": [
+                "google.com",
+                "googleapis.com",
+                "gstatic.com"
+            ],
+            "risk_level": 0.0
+        },
+        "firefox": {
+            "name": "Mozilla Firefox",
+            "category": "web-browser",
+            "patterns": [
+                "Firefox/[\\d.]+",
+                "Gecko/\\d+"
+            ],
+            "tls_sni_patterns": [
+                "mozilla.org",
+                "firefox.com"
+            ],
+            "risk_level": 0.0
+        },
+        "whatsapp": {
+            "name": "WhatsApp",
+            "category": "messaging",
+            "patterns": [
+                "WhatsApp/[\\d.]+",
+                "WA-[\\d.]+"
+            ],
+            "tls_sni_patterns": [
+                "whatsapp.com",
+                "whatsapp.net",
+                "wa.me"
+            ],
+            "risk_level": 0.1
+        },
+        "telegram": {
+            "name": "Telegram",
+            "category": "messaging",
+            "patterns": [
+                "Telegram",
+                "TelegramBot"
+            ],
+            "tls_sni_patterns": [
+                "telegram.org",
+                "t.me",
+                "telegram.me"
+            ],
+            "risk_level": 0.1
+        },
+        "facebook": {
+            "name": "Facebook",
+            "category": "social-media",
+            "patterns": [
+                "FBAN/",
+                "FB_IAB",
+                "facebook"
+            ],
+            "tls_sni_patterns": [
+                "facebook.com",
+                "fb.com",
+                "fbcdn.net"
+            ],
+            "risk_level": 0.1
+        },
+        "instagram": {
+            "name": "Instagram",
+            "category": "social-media",
+            "patterns": [
+                "Instagram",
+                "instagrambot"
+            ],
+            "tls_sni_patterns": [
+                "instagram.com",
+                "cdninstagram.com"
+            ],
+            "risk_level": 0.1
+        },
+        "twitter": {
+            "name": "Twitter/X",
+            "category": "social-media",
+            "patterns": [
+                "Twitter",
+                "Twitterbot"
+            ],
+            "tls_sni_patterns": [
+                "twitter.com",
+                "x.com",
+                "twimg.com"
+            ],
+            "risk_level": 0.1
+        },
+        "youtube": {
+            "name": "YouTube",
+            "category": "streaming",
+            "patterns": [
+                "YouTube",
+                "Youtubei",
+                "com.google.android.youtube"
+            ],
+            "tls_sni_patterns": [
+                "youtube.com",
+                "youtu.be",
+                "ytimg.com",
+                "googlevideo.com"
+            ],
+            "risk_level": 0.0
+        },
+        "netflix": {
+            "name": "Netflix",
+            "category": "streaming",
+            "patterns": [
+                "Netflix",
+                "NFLX"
+            ],
+            "tls_sni_patterns": [
+                "netflix.com",
+                "nflxvideo.net",
+                "nflximg.net"
+            ],
+            "risk_level": 0.0
+        },
+        "spotify": {
+            "name": "Spotify",
+            "category": "streaming",
+            "patterns": [
+                "Spotify/[\\d.]+",
+                "spotify-"
+            ],
+            "tls_sni_patterns": [
+                "spotify.com",
+                "scdn.co",
+                "spotifycdn.com"
+            ],
+            "risk_level": 0.0
+        },
+        "ssh": {
+            "name": "SSH",
+            "category": "remote-access",
+            "patterns": [
+                "SSH-2.0",
+                "OpenSSH"
+            ],
+            "risk_level": 0.3
+        },
+        "rdp": {
+            "name": "RDP",
+            "category": "remote-access",
+            "patterns": [
+                "Cookie: mstshash"
+            ],
+            "risk_level": 0.3
+        },
+        "teamviewer": {
+            "name": "TeamViewer",
+            "category": "remote-access",
+            "patterns": [
+                "TeamViewer"
+            ],
+            "tls_sni_patterns": [
+                "teamviewer.com",
+                "router.teamviewer.com"
+            ],
+            "risk_level": 0.4
+        },
+        "anydesk": {
+            "name": "AnyDesk",
+            "category": "remote-access",
+            "patterns": [
+                "AnyDesk"
+            ],
+            "tls_sni_patterns": [
+                "anydesk.com",
+                "net.anydesk.com"
+            ],
+            "risk_level": 0.4
+        },
+        "bit-torrent": {
+            "name": "BitTorrent",
+            "category": "p2p",
+            "patterns": [
+                "BitTorrent",
+                "Transmission",
+                "uTorrent",
+                "BitComet"
+            ],
+            "risk_level": 0.6
+        },
+        "tor": {
+            "name": "Tor",
+            "category": "anonymizer",
+            "patterns": [
+                "Tor",
+                "AUTHENTICATE"
+            ],
+            "tls_sni_patterns": [
+                "torproject.org"
+            ],
+            "risk_level": 0.8
+        },
+        "aws": {
+            "name": "Amazon Web Services",
+            "category": "cloud",
+            "patterns": [
+                "aws-sdk",
+                "Amazon",
+                "EC2"
+            ],
+            "tls_sni_patterns": [
+                "amazonaws.com",
+                "aws.amazon.com"
+            ],
+            "risk_level": 0.0
+        },
+        "azure": {
+            "name": "Microsoft Azure",
+            "category": "cloud",
+            "patterns": [
+                "Azure",
+                "WindowsAzure"
+            ],
+            "tls_sni_patterns": [
+                "azure.com",
+                "azurewebsites.net",
+                "azure-api.net"
+            ],
+            "risk_level": 0.0
+        },
+        "gcp": {
+            "name": "Google Cloud",
+            "category": "cloud",
+            "patterns": [
+                "gcloud",
+                "google-cloud"
+            ],
+            "tls_sni_patterns": [
+                "googleapis.com",
+                "cloud.google.com"
+            ],
+            "risk_level": 0.0
+        },
+        "github": {
+            "name": "GitHub",
+            "category": "development",
+            "patterns": [
+                "GitHub",
+                "git/"
+            ],
+            "tls_sni_patterns": [
+                "github.com",
+                "githubusercontent.com"
+            ],
+            "risk_level": 0.0
+        },
+        "discord": {
+            "name": "Discord",
+            "category": "messaging",
+            "patterns": [
+                "Discord"
+            ],
+            "tls_sni_patterns": [
+                "discord.com",
+                "discord.gg",
+                "discordapp.com",
+                "gateway.discord.gg"
+            ],
+            "risk_level": 0.2
+        },
+        "steam": {
+            "name": "Steam",
+            "category": "gaming",
+            "patterns": [
+                "Steam",
+                "Valve"
+            ],
+            "tls_sni_patterns": [
+                "steampowered.com",
+                "steamcommunity.com"
+            ],
+            "risk_level": 0.1
+        },
+        "http": {
+            "name": "HTTP Web",
+            "category": "web",
+            "patterns": [
+                "HTTP/1.1",
+                "HTTP/1.0",
+                "HTTP/2.0"
+            ],
+            "risk_level": 0.0
+        },
+        "tls": {
+            "name": "SSL/TLS",
+            "category": "web",
+            "patterns": [
+                "\\x16\\x03"
+            ],
+            "risk_level": 0.0
+        }
+    }
+}

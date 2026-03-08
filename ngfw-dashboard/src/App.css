@@ -1,0 +1,27 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.content-area {
+  margin-top: var(--header-height);
+  flex: 1;
+  background-color: var(--bg-secondary);
+}
+
+.page-content {
+  padding: 2rem;
+}
+
+/* Scrollbar adjustment for main content */
+.main-content {
+  overflow-y: auto;
+  height: 100vh;
+}

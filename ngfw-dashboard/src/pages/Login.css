@@ -1,0 +1,230 @@
+.login-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a0c10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: #e0e0e0;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.gov-header-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1e26;
+    border-bottom: 2px solid #2d333b;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8b949e;
+    z-index: 100;
+    /* Ensure banner stays on top */
+}
+
+.gov-seal {
+    font-size: 1.2rem;
+}
+
+.login-card.professional {
+    width: 420px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    padding: 3.5rem 3rem;
+    border-radius: 4px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    margin-top: 140px;
+    /* Increased space for the top banner */
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.security-icon-3d {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px rgba(67, 127, 242, 0.4));
+}
+
+.login-logo-main {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.banner-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.login-header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.sub-title {
+    color: #58a6ff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8b949e;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
+.input-with-icon input {
+    width: 100%;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: 4px;
+    color: #c9d1d9;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.input-with-icon input:focus {
+    border-color: #58a6ff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+    background-color: #121d2f;
+}
+
+.login-btn-gov {
+    background-color: #238636;
+    color: #ffffff;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    padding: 1.2rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.login-btn-gov:hover {
+    background-color: #2ea043;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(35, 134, 54, 0.3);
+}
+
+.login-btn-gov:active {
+    transform: translateY(0);
+}
+
+.login-btn-gov:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.login-disclaimer {
+    font-size: 0.7rem;
+    color: #484f58;
+    line-height: 1.6;
+    text-align: center;
+    border-top: 1px solid #30363d;
+    padding-top: 1.5rem;
+}
+
+.login-disclaimer a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+/* 3D Background Grid */
+.background-grid {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image:
+        linear-gradient(rgba(88, 166, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88, 166, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(1000px) rotateX(60deg);
+    animation: gridMove 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(1000px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateX(60deg) translateY(50px);
+    }
+}
+
+.login-error {
+    background-color: rgba(248, 81, 73, 0.1);
+    border: 1px solid #f85149;
+    color: #f85149;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-align: center;
+}
