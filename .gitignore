@@ -24,6 +24,8 @@ env/
 *.csv
 *.zip
 *.dataset
+new_dataset/
+new_samples/
 
 # ========================
 # ML Models & Artifacts
@@ -33,6 +35,7 @@ env/
 *.h5
 *.pt
 *.onnx
+*.ipynb
 
 # ========================
 # Executables & Binaries
