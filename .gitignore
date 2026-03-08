@@ -1,4 +1,6 @@
+# ========================
 # Python
+# ========================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -8,46 +10,82 @@ dist/
 build/
 *.egg
 
-# Virtual environments
+# ========================
+# Virtual Environments
+# ========================
 venv/
 env/
 .venv/
+.env/
 
-# IDE
+# ========================
+# Datasets
+# ========================
+*.csv
+*.zip
+*.dataset
+
+# ========================
+# ML Models & Artifacts
+# ========================
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+
+# ========================
+# Executables & Binaries
+# ========================
+*.exe
+*.dll
+*.so
+*.dylib
+
+# ========================
+# Database
+# ========================
+*.db
+*.sqlite3
+
+# ========================
+# IDE & Editor
+# ========================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+# ========================
+# OS Files
+# ========================
 Thumbs.db
 Desktop.ini
 .DS_Store
 
+# ========================
 # Node.js
+# ========================
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Vite
+# ========================
+# Vite Build Output
+# ========================
 ngfw-dashboard/dist/
 
-# Database
-*.db
-
-# Environment variables
+# ========================
+# Environment Variables
+# ========================
 .env
 .env.local
 .env.*.local
 
-# Logs
+# ========================
+# Logs & Test Output
+# ========================
 *.log
-
-# Test output
 test_output.txt
-*.csv
-*.pkl
-*.db
-*.exe
